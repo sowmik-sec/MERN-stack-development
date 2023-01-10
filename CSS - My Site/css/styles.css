@@ -1,0 +1,96 @@
+body {
+  margin: 0px;
+  text-align: center;
+  font-family: "Merriweather", serif;
+}
+
+h1 {
+  margin: 50px auto 0 auto;
+  font-family: "Sacramento", cursive;
+  font-size: 5.625rem;
+  color: #66bfbf;
+  line-height: 2;
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
+  font-weight: normal;
+  color: #66bfbf;
+}
+
+h3 {
+  font-family: "Montserrat", sans-serif;
+  color: #11999e;
+}
+
+.top-container {
+  background-color: #bfeaf5;
+  position: relative;
+  padding-top: 100px;
+}
+
+.pro {
+  text-decoration: underline;
+}
+
+.top-winter {
+  position: relative;
+  left: 400px;
+}
+
+.bottom-winter {
+  position: relative;
+  display: block;
+  top: 10px;
+  left: 100px;
+  bottom: 1000px;
+}
+
+.mountain {
+  position: relative;
+  top: 50px;
+  bottom: 100px;
+}
+
+.pro-pic {
+  height: 200px;
+  width: 200px;
+}
+
+.middle-container {
+  padding-top: 150px;
+}
+
+a {
+  color: #11999e;
+}
+
+.skill-row {
+  width: 50%;
+  margin: 100px auto 100px auto;
+  text-align: left;
+  line-height: 2;
+}
+
+.programmer {
+  height: 25%;
+  width: 25%;
+  float: left;
+  padding-right: 30px;
+}
+
+.travel-img {
+  height: 200px;
+  width: 200px;
+  float: right;
+  margin-left: 30px;
+}
+
+.programmer-p {
+  clear: left;
+}
+
+.travel-p {
+  clear: right;
+}
