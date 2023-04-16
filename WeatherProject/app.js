@@ -10,14 +10,17 @@ app.get("/", (req, res) => {
     console.log(response.statusCode);
     response.on("data", (data) => {
       const weatherData = JSON.parse(data);
-      //   console.log(weatherData);
       const temp = weatherData.main.temp;
       const weatherDescription = weatherData.weather[0].description;
-      console.log(weatherDescription);
-      console.log(temp);
+      const icon = ` https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`;
+      res.write(
+        "<h1>The temperature in Kurigram is " + temp + " degrees Celsius.</h1>"
+      );
+      res.write("<h3>The weather is currently " + weatherDescription + "</h3>");
+      res.write(`<img src=${icon}>`);
+      res.send();
     });
   });
-  res.send("Weather project is running");
 });
 
 app.listen(port, () => {
