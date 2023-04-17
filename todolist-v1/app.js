@@ -12,7 +12,7 @@ let items = ["Buy Food", "Cook Food", "Eat Food"];
 let workItems = [];
 
 app.get("/", (req, res) => {
-  const day = date();
+  const day = date.getDate();
   res.render("list", { listTitle: day, newListItems: items });
 });
 

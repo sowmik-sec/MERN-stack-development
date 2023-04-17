@@ -6,7 +6,16 @@ const getDate = () => {
     day: "numeric",
     month: "long",
   };
-  const day = today.toLocaleDateString("en-in", options);
-  return day;
+  return today.toLocaleDateString("en-in", options);
 };
-module.exports = getDate;
+module.exports.getDate = getDate;
+
+const getDay = () => {
+  const today = new Date();
+  const options = {
+    weekday: "long",
+  };
+  return today.toLocaleDateString("en-in", options);
+};
+
+module.exports.getDay = getDay;
