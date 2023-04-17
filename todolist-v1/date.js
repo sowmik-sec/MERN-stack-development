@@ -1,5 +1,5 @@
 // jshint es version 6. I don't know will this work for me or not
-const getDate = () => {
+exports.getDate = () => {
   const today = new Date();
   const options = {
     weekday: "long",
@@ -8,14 +8,11 @@ const getDate = () => {
   };
   return today.toLocaleDateString("en-in", options);
 };
-module.exports.getDate = getDate;
 
-const getDay = () => {
+exports.getDay = () => {
   const today = new Date();
   const options = {
     weekday: "long",
   };
   return today.toLocaleDateString("en-in", options);
 };
-
-module.exports.getDay = getDay;

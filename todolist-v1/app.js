@@ -8,8 +8,8 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("public"));
 
-let items = ["Buy Food", "Cook Food", "Eat Food"];
-let workItems = [];
+const items = ["Buy Food", "Cook Food", "Eat Food"];
+const workItems = [];
 
 app.get("/", (req, res) => {
   const day = date.getDate();
@@ -32,7 +32,7 @@ app.post("/", (req, res) => {
 });
 
 app.post("/work", (req, res) => {
-  let item = req.body.newItem;
+  const item = req.body.newItem;
   workItems.push(item);
   res.redirect("/work");
 });
