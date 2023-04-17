@@ -6,23 +6,14 @@ const port = process.env.PORT || 5000;
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
-  const daysOfWeek = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
   const today = new Date();
-  //   let day = "";
-  //   if (today.getDate() === 5 || today.getDate() === 6) {
-  //     day = "Weekend";
-  //   } else {
-  //     day = "Weekday";
-  //   }
-  res.render("list", { dayName: daysOfWeek[parseInt(today.getDay())] });
+  const options = {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+  };
+  const day = today.toLocaleDateString("en-in", options);
+  res.render("list", { dayName: day });
 });
 
 app.listen(port, () => {
