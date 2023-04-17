@@ -6,6 +6,8 @@ const port = process.env.PORT || 5000;
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: false }));
 
+let items = [];
+
 app.get("/", (req, res) => {
   const today = new Date();
   const options = {
@@ -14,12 +16,13 @@ app.get("/", (req, res) => {
     month: "long",
   };
   const day = today.toLocaleDateString("en-in", options);
-  res.render("list", { dayName: day });
+  res.render("list", { dayName: day, newListItems: items });
 });
 
 app.post("/", (req, res) => {
   const item = req.body.newItem;
-  console.log(item);
+  items.push(item);
+  res.redirect("/");
 });
 
 app.listen(port, () => {
